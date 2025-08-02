@@ -39,10 +39,14 @@ function isAuthenticated(req, res, next) {
 // Show all students (READ)
 router.get('/show', isAuthenticated, (req, res) => {
   connection.query('SELECT * FROM student', (err, results) => {
-    if (err) return res.send('Error fetching students');
+    if (err) {
+      console.error('❌ DB Error in /show:', err);  // Add this log
+      return res.send('Error fetching students');
+    }
     res.render('students', { students: results });
   });
 });
+
 
 // Show Add Form (CREATE)
 router.get('/add', isAuthenticated, (req, res) => {

@@ -6,6 +6,10 @@ const connection = require('../db_config');
 const validCollege = 'vit';
 const validPassword = '123';
 
+router.get('/', (req, res) => {
+  res.redirect('/login'); // or res.render('login');
+});
+
 // Render login page
 router.get('/login', (req, res) => {
   res.render('login');

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>College Login</title>
+  <style>
+    body {  
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      font-family: sans-serif;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    form {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+    }
+    input {
+      display: block;
+      margin-bottom: 15px;
+      padding: 10px;
+      width: 250px;
+      border: none;
+      border-radius: 8px;
+    }
+    button {
+      background: #4CAF50;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <form method="POST" action="/login">
+    <h2>🔐 College Access</h2>
+    <input type="text" name="college" placeholder="College Name" required />
+    <input type="password" name="password" placeholder="College Password" required />
+    <button type="submit">Enter</button>
+  </form>
+</body>
+</html> 
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>College Login</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #f8cdda, #a6c1ee, #fbc2eb, #fcd5ce);
+      background-size: 400% 400%;
+      animation: bgShift 15s ease infinite;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    @keyframes bgShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      font-size: 36px;
+      color: #333;
+      margin-bottom: 20px;
+      animation: floatIn 1s ease-out forwards;
+    }
+
+    @keyframes floatIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    form {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 20px 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 1.2s ease-in-out;
+      width: 240px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+      background: #f0f0f0;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #6a82fb;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #5a72e0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Please Login</h1>
+  <form method="POST" action="/login">
+    <h3 style="text-align: center; color: #444;">🔐 College Access</h3>
+    <input type="text" name="college" placeholder="College Name" required />
+    <input type="password" name="password" placeholder="College Password" required />
+    <button type="submit">Enter</button>
+  </form>
+</body>
+</html>-->

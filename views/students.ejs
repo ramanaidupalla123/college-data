@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>All Students</title>
+   <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #8e44ad, #3498db, #e74c3c);
+      background-size: 600% 600%;
+      animation: bgAnimation 15s ease infinite;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+      text-align: center;
+    }
+
+    @keyframes bgAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-top: 30px;
+      text-shadow: 2px 2px 5px #000;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    table {
+      margin: 40px auto;
+      border-collapse: collapse;
+      width: 80%;
+      background-color: rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+      overflow: hidden;
+      animation: slideInUp 1s ease-out;
+    }
+
+    @keyframes slideInUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    th, td {
+      padding: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    th {
+      background-color: rgba(0, 0, 0, 0.2);
+      font-size: 1.2em;
+    }
+
+    td {
+      font-size: 1.1em;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      margin: 10px;
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 8px;
+      transition: transform 0.2s, background-color 0.3s;
+    }
+
+    a:hover {
+      transform: scale(1.05);
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .actions button {
+      margin: 0 5px;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .edit-btn {
+      background-color: #2ecc71;
+      color: white;
+    }
+
+    .delete-btn {
+      background-color: #e74c3c;
+      color: white;
+    }
+
+    .edit-btn:hover {
+      background-color: #27ae60;
+    }
+
+    .delete-btn:hover {
+      background-color: #c0392b;
+    }
+  </style>
+</head>
+<body>
+  <h1>STUDENTS IN VIT_COLLEGE</h1>
+  <a href="/add">➕ Add New Student</a>
+  <table border="1">
+    <tr>
+      <th>ID</th><th>Name</th><th>Branch</th><th>Actions</th>
+    </tr>
+    <% students.forEach(student => { %>
+      <tr>
+        <td><%= student.id %></td>
+        <td><%= student.username %></td>
+        <td><%= student.branch %></td>
+        <td>
+          <a href="/edit/<%= student.id %>">✏️ Edit</a>
+          <a href="/delete/<%= student.id %>" onclick="return confirm('Delete this student?')">🗑️ Delete</a>
+        </td>
+      </tr>
+    <% }) %>
+  </table>
+</body>
+</html>
